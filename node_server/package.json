@@ -1,0 +1,22 @@
+{
+  "name": "bakery",
+  "version": "1.0.0",
+  "description": "ahihi",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "khanhpham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "md5": "^2.2.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-execute": "^0.2.2",
+    "nodemon": "^1.18.3"
+  }
+}
