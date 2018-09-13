@@ -8,7 +8,7 @@ import { IconsComponent } from '../../page/icons/icons.component';
 import { MapsComponent } from '../../page/maps/maps.component';
 import { NotificationsComponent } from '../../page/notifications/notifications.component';
 import { UpgradeComponent } from '../../page/upgrade/upgrade.component';
-import { AuthService } from '../../service/auth.service';
+import { AuthService } from '../../service/auth/auth.service';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { OrdersComponent } from '../../page/orders/orders.component';
 export const AdminLayoutRoutes: Routes = [

@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ConstantService } from './constant.service';
 import { Headers, RequestOptions } from '@angular/http';
+import { ConstantService } from '../constant/constant.service';
+import { environment } from 'environments/environment';
+
 @Injectable()
 export class UserService {
 
   public user: any;
-  http: any;
-  constructor(http: HttpClient) {
-    this.http = http;
+  constructor(private _http: HttpClient) {
+    if (!this.user) {
+      if (localStorage.getItem('user')) {
+        this.user = JSON.parse(localStorage.getItem('user'));
+      }
+    }
   }
 
   login(username, password) {
-    var url = ConstantService.SERVER_URL + 'user/login';
+    var url = environment.enpoint + 'user/login';
     return new Promise((resolve, reject) => {
-      this.http.post(url, { username: username, password: password })
+      this._http.post<any>(url, { username: username, password: password })
         .subscribe(result => {
           if (result.status == ConstantService.responseStatus.error) {
             reject();
@@ -34,12 +39,9 @@ export class UserService {
       }
     }
     return this.user;
-
-
-
   }
 
   getToken() {
-    return this.user.token;
+    return (this.user && this.user.token) ? this.user.token : '';
   }
 }

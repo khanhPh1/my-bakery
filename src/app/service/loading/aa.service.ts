@@ -7,26 +7,22 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { UserService } from './user.service';
 import { HttpResponse } from 'selenium-webdriver/http';
+import { UserService } from '../user/user.service';
 @Injectable()
 export class loadService implements HttpInterceptor {
-  constructor(private user: UserService) {
+  constructor(private _userService: UserService) {
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     request = request.clone({
       setHeaders: {
-        Authorization: `${this.user.getToken()}`
+        Authorization: `${this._userService.getToken()}`
       }
     });
     // this.spinnerService.start();
-    return next.handle(request).pipe(tap((event: HttpEvent<any>) => { 
-        if (event instanceof HttpResponse) {
-        }
-      },
-        (err: any) => {
-      }));
-        
+    return next.handle(request);
   }
+
+  
 }

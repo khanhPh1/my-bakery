@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -port 9999 -host 0.0.0.0 -open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -42,6 +42,7 @@
     "perfect-scrollbar": "1.1.0",
     "popper.js": "1.14.3",
     "rxjs": "5.5.10",
+    "tus-js-client": "^1.5.1",
     "web-animations-js": "2.3.1",
     "zone.js": "0.8.4"
   },

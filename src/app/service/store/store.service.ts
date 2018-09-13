@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ConstantService } from './constant.service';
 import { Headers, RequestOptions } from '@angular/http';
+import { ConstantService } from '../constant/constant.service';
+import { environment } from 'environments/environment';
 @Injectable()
 export class StoreService {
 
@@ -12,7 +13,7 @@ export class StoreService {
   }
 
   getList() {
-    var url = ConstantService.SERVER_URL + 'store/getlist';
+    var url = environment.enpoint + 'store/getlist';
     return new Promise((resolve, reject) => {
       this.http.get(url)
         .subscribe(result => {
@@ -38,6 +39,6 @@ export class StoreService {
   }
 
   getToken() {
-    return this.user.token;
+    return this.user.token ? this.user.token : '';
   }
 }

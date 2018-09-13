@@ -1,0 +1,5 @@
+module.exports = {
+  RESPONSE_ERROR_STATUS: 0,
+  RESPONSE_SUCCESS_STATUS: 1,
+  RESPONSE_ERROR_MESSAGE_NOT_FOUND: "Record not found"
+};

@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', '*');
   res.setHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
   res.setHeader('Access-Control-Max-Age', '1000');
-  next();
+  next(); 
 });
 
 var con = mysql.createConnection(db);

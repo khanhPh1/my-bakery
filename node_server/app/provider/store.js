@@ -25,7 +25,6 @@ function _getlist(con, cb) {
       callback(cb, response);
     })
     .catch(err => {
-      console.log(err);
       callback(cb, { status: 0, message: err.sqlMessage });
     });
 

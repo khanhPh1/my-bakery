@@ -4,5 +4,6 @@ class Responses {
         this.data = '';
         this.message = '';
     }
+    
 }
 module.exports = Responses;
